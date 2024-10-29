@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* ใช้ min-height แทน */
     background: linear-gradient(135deg, #4a90e2, #50e3c2);
     color: #333;
     margin: 0;
@@ -36,10 +36,6 @@ label {
     display: block;
     margin-top: 1em;
     color: #555;
-    position: relative; /* ใช้สำหรับการจัดตำแหน่ง label */
-}
-
-.input-container {
     position: relative; /* ใช้สำหรับการจัดตำแหน่ง label */
 }
 
@@ -142,4 +138,40 @@ h2, h3 {
 
 h2:hover, h3:hover {
     color: #007bff; /* เปลี่ยนสีเมื่อวางเมาส์ */
+}
+
+.developer-name {
+    font-size: 2em; /* ปรับขนาดฟอนต์ */
+    font-weight: bold; /* ทำให้ข้อความหนา */
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #80ff00, #00ffff, #8000ff, #ff00ff); /* สีไล่ระดับ */
+    background-size: 300%; /* ขยายขนาดพื้นหลังเพื่อให้สีไล่ขึ้น */
+    -webkit-background-clip: text; /* ใช้คลิปพื้นหลัง */
+    -webkit-text-fill-color: transparent; /* ทำให้สีพื้นหลังเป็นโปร่งแสง */
+    animation: gradient 6s linear infinite; /* เพิ่มอนิเมชันที่เลื่อน */
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%; /* เริ่มต้นที่ตำแหน่งเริ่มต้น */
+    }
+    100% {
+        background-position: 100% 50%; /* เลื่อนถึงตำแหน่งสุดท้าย */
+    }
+}
+
+.report-button {
+    display: inline; /* เปลี่ยนให้เป็น inline เพื่อไม่ให้เป็นบล็อก */
+    margin-top: 2em; /* ระยะห่างด้านบน */
+    padding: 0.7em 1.5em; /* ขนาดของปุ่ม */
+    font-size: 1em; /* ขนาดฟอนต์ */
+    color: #ff0080; /* สีข้อความ */
+    background: none; /* ไม่มีพื้นหลัง */
+    border: none; /* ไม่มีกรอบ */
+    text-decoration: underline; /* ขีดเส้นใต้ */
+    transition: color 0.3s; /* เพิ่มการเปลี่ยนสี */
+    font-weight: normal; /* น้ำหนักข้อความธรรมดา */
+}
+
+.report-button:hover {
+    color: #e22400; /* เปลี่ยนสีเมื่อ hover */
 }
