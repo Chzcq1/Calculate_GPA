@@ -1,0 +1,201 @@
+/* ตั้งค่าพื้นฐาน */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4a90e2, #50e3c2);
+    color: #333;
+    margin: 0;
+}
+
+/* กล่องคำนวณ */
+.calculator-container {
+    background: #fff;
+    padding: 2em;
+    border-radius: 15px; /* ปรับให้มุมโค้งมนมากขึ้น */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* เพิ่มความลึกให้กับกล่อง */
+    text-align: center;
+    width: 320px; /* ขยายกล่องให้กว้างขึ้น */
+    transform: translateY(20px); /* เริ่มต้นที่ต่ำกว่า */
+    animation: fadeIn 0.5s ease forwards; /* อนิเมชันการแสดงผล */
+}
+
+/* ชื่อหัวข้อ */
+h1 {
+    font-size: 1.8em; /* ขยายขนาดฟอนต์ */
+    color: #4a90e2;
+    margin-bottom: 1em;
+}
+
+/* ฟอร์มและปุ่ม */
+label {
+    font-size: 1em;
+    display: block;
+    margin-top: 1em;
+    color: #555;
+}
+
+.input-container {
+    position: relative; /* ใช้สำหรับการจัดตำแหน่ง label */
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s; /* เพิ่มการเปลี่ยนสีและเงา */
+}
+
+input[type="number"]:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* เพิ่มเงาเมื่อโฟกัส */
+}
+
+/* ป้ายชื่อในช่องกรอก */
+.placeholder {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa; /* สีจาง */
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+    pointer-events: none; /* ป้องกันการคลิก */
+}
+
+input[type="number"]:focus + .placeholder,
+input[type="number"]:not(:placeholder-shown) + .placeholder {
+    top: -10px; /* ดันขึ้น */
+    font-size: 0.8em; /* ลดขนาด */
+    color: #4a90e2; /* เปลี่ยนสี */
+}
+
+button {
+    margin-top: 1.5em;
+    padding: 0.7em 1em;
+    font-size: 1em;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* เพิ่มการเปลี่ยนขนาด */
+}
+
+button:hover {
+    background-color: #357ABD;
+    transform: scale(1.05); /* ขยายปุ่มเมื่อ hover */
+}
+
+/* แสดงผลลัพธ์ */
+h2 {
+    font-size: 1.5em; /* ขยายขนาดฟอนต์ */
+    color: #333;
+    margin-top: 1em;
+}
+
+/* เพิ่มสไตล์ให้ข้อความเกรดเฉลี่ย */
+#averageGrade {
+    color: #50e3c2;
+    font-weight: bold;
+    font-size: 1.5em; /* ขยายขนาดฟอนต์ */
+}
+
+/* อนิเมชัน fadeIn */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* เริ่มต้นที่ต่ำกว่า */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* ยกขึ้นเมื่อแสดงผล */
+} {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #4a90e2, #50e3c2);
+        color: #333;
+        margin: 0;
+    }
+
+    .calculator-container {
+        background: #fff;
+        padding: 2em;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 350px;
+        animation: fadeIn 0.5s ease;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        color: #4a90e2;
+        margin-bottom: 1em;
+    }
+
+    label {
+        font-size: 1em;
+        display: block;
+        margin-top: 1em;
+        color: #555;
+        position: relative;
+    }
+
+    input[type="number"] {
+        width: 100%;
+        padding: 0.5em;
+        margin-top: 0.5em;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 1em;
+        transition: border-color 0.3s;
+    }
+
+    input[type="number"]:focus {
+        border-color: #4a90e2;
+    }
+
+    button {
+        margin-top: 1.5em;
+        padding: 0.7em 1em;
+        font-size: 1em;
+        color: #fff;
+        background-color: #4a90e2;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+        background-color: #357ABD;
+        transform: scale(1.05);
+    }
+
+    h3 {
+        color: #888;
+        font-size: 0.9em;
+        margin-top: 1em;
+    }
+
+    #averageGrade {
+        color: #50e3c2;
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-top: 1em;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
